@@ -1,8 +1,8 @@
 # NFIST
 
 **Normalizing Flow Invertible Solution Transformer** is a neural solution operator for
-stochastic mean-field control. It comes from the paper *Self-supervised In-context Operator
-Learning for Stochastic Mean-Field Control* (S. Gao, M. Zhou, R. Lai).
+stochastic mean-field control. It comes from the paper [*Self-supervised In-context Operator
+Learning for Stochastic Mean-Field Control*](https://arxiv.org/abs/2608.18282) (S. Gao, M. Zhou, R. Lai).
 
 NFIST maps a task prompt to a time-dependent normalizing flow `x_t = F(x_0, t)`. The prompt
 can be distribution parameters or particle clouds. The flow is the identity at `t = 0` and
@@ -40,3 +40,16 @@ s = op.score(y, t1, log_p0)         # grad log p_t at y, t1: (bsz,)
 
 For particle-cloud prompts, use `NFIST(..., cloud_prompts=('p0', 'p1'))` and pass clouds
 of shape `(bsz, n_samples, 2)`.
+
+## Citation
+
+If you use this code, please cite our paper:
+
+```bibtex
+@article{gao2026nfist,
+  title   = {Self-supervised In-context Operator Learning for Stochastic Mean-Field Control},
+  author  = {Gao, Suyi and Zhou, Mo and Lai, Rongjie},
+  journal = {arXiv preprint arXiv:2608.18282},
+  year    = {2026}
+}
+```
